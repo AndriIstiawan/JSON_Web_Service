@@ -1,3 +1,5 @@
+const Generator = require('./generatorsModel');
+
 const crypto = require('crypto');
 
 exports.generateToken = async () => {
@@ -6,7 +8,16 @@ exports.generateToken = async () => {
         return buf.toString('hex');
     } catch (e) {
         // Log Errors
-        throw Error('Error')
+        return e;
     }
 }
 
+exports.findOneByemail = async (email) => {
+    return Generator.findOne({ email: email });
+}
+
+exports.newLink = async (token, tokenExpires, generator) => {
+    generator.token = token;
+    generator.tokenExpires = tokenExpires;
+    return generator.save()
+}

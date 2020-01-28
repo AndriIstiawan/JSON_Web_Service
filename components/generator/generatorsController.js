@@ -1,4 +1,4 @@
-const { generateToken } = require('./generatorsService');
+const { generateToken, findOneByemail, newLink } = require('./generatorsService');
 const Generator = require('./generatorsModel');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
@@ -52,6 +52,21 @@ generatorController.login = async (req, res, next) => {
     }
     catch (err) {
         res.status(500).json({ message: 'server bermasalah' });
+    }
+}
+
+generatorController.newLink = async (req, res) => {
+    try {
+        let token = await generateToken(),
+            tokenExpires = Date.now() + 604800000;
+        let generator = await findOneByemail(req.user.email);
+        let newlink = await newLink(token, tokenExpires, generator);
+        res.status(200).json({
+            message: 'Success',
+            link: config.ip_address + '/api/v1/contributor/' + newlink.token
+        });
+    } catch (err) {
+        return res.status(500).send('Error 2 ' + err);
     }
 }
 

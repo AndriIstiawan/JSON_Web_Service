@@ -1,8 +1,8 @@
-const User = require('../generator/generatorsModel');
+const Generator = require('../generator/generatorsModel');
 const Contributor = require('./contributorsModel');
 
 exports.findOneByToken = async (token) => {
-    return User.findOne({
+    return Generator.findOne({
         token: token,
         tokenExpires: { $gt: Date.now() }
     });
