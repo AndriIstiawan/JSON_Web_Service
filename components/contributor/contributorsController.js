@@ -14,7 +14,7 @@ exports.create = async (req, res) => {
         } else {
             contributor = await updateContribution(req.body.email, contribution)
         }
-        res.status(201).json({ success: true, message: "Successfully add new content", content: contributor });
+        res.status(201).json({ success: true, message: "Successfully add new contribution", contributor: contributor });
     }
     catch (err) {
         res.status(500).json({ success: false, message: "Error" });

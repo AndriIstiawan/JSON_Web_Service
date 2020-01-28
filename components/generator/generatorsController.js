@@ -9,7 +9,7 @@ generatorController.register = async (req, res) => {
     try {
         let token = await generateToken(),
             tokenExpires = Date.now() + 604800000;
-        Generator.register(new User({
+        Generator.register(new Generator({
             username: req.body.username,
             email: req.body.email,
             token: token,
@@ -66,7 +66,7 @@ generatorController.newLink = async (req, res) => {
             link: config.ip_address + '/api/v1/contributor/' + newlink.token
         });
     } catch (err) {
-        return res.status(500).send('Error 2 ' + err);
+        return res.status(500).send({ message: 'server bermasalah' });
     }
 }
 
