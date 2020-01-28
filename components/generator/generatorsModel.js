@@ -3,7 +3,7 @@ const timestamps = require('mongoose-timestamp');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
-const UserSchema = new Schema({
+const GeneratorSchema = new Schema({
     username: {
         type: String,
         required: true
@@ -23,7 +23,7 @@ const UserSchema = new Schema({
     }
 })
 
-UserSchema.plugin(passportLocalMongoose);
-UserSchema.plugin(timestamps)
+GeneratorSchema.plugin(passportLocalMongoose);
+GeneratorSchema.plugin(timestamps)
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Generator", GeneratorSchema);
