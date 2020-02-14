@@ -24,6 +24,8 @@
 
 		node index.js
 
+## Run with Dokcer
+1. run comment docker build - < Dockerfile
   
 
 ## API Usage
