@@ -42,7 +42,7 @@
 
 1. Get Person
 
-	`GET` request ke `http://localhost:4000/api/v1/person`
+	`GET` request ke `http://localhost:8000/api/v1/person`
 
 
 # Testing Code
