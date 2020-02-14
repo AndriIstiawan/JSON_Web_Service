@@ -1,5 +1,5 @@
 
-# Contribution System
+# JSON Web Service
 
 ## Prerequisites
 1. Install Node.js latest
