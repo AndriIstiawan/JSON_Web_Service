@@ -4,9 +4,7 @@
 ## Prerequisites
 1. Install Node.js latest
 
-2. Install Mongodb latest
-
-3. Clone this repository:
+2. Clone this repository:
 
 		https://github.com/AndriIstiawan/JSON_Web_Service.git
 		
