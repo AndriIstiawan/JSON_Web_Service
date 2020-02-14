@@ -25,7 +25,17 @@
 		node index.js
 
 ## Run with Dokcer
-1. run comment docker build - < Dockerfile
+1. build docker image
+
+		docker image build -t json_web_service:1.0 .
+		
+2. publish image to docker container
+
+		docker container run --publish 8000:8080 --detach --name bb json_web_service:1.0
+
+3. run app
+
+		localhost:8000
   
 
 ## API Usage
@@ -46,7 +56,7 @@
 
 1. npm run test
 
-	perintah ini di jalankan untuk melakukan run unit-test.
+	perintah ini di jalankan untuk melakukan run test.
   
 
 ## History
